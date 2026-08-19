@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>యోహాను 17–21 · 100 ప్రశ్నలు</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ramaraja&family=Noto+Serif+Telugu:wght@400;500;600;700&family=EB+Garamond:ital@0;1&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1b1420;
+      --ink-2: #281c2a;
+      --panel: #2d2030;
+      --gold: #c9a227;
+      --gold-lit: #e4c766;
+      --ivory: #f3eadb;
+      --ivory-dim: #c7bba9;
+      --sage: #8aa05a;
+      --rust: #b45c42;
+      --hair: rgba(201, 162, 39, .28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      font-family: "Noto Serif Telugu", serif;
+      background: radial-gradient(120% 80% at 50% -10%, #2a1c2c 0%, var(--ink) 55%, #150f19 100%);
+      color: var(--ivory);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 26px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame {
+      width: 100%;
+      max-width: 640px;
+      background: linear-gradient(180deg, var(--ink-2), var(--panel));
+      border: 1px solid var(--hair);
+      border-radius: 6px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .5), inset 0 0 0 1px rgba(255, 255, 255, .02);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .frame::before,
+    .frame::after {
+      content: "";
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      pointer-events: none;
+      border: 1px solid var(--gold);
+      opacity: .5;
+    }
+
+    .frame::before {
+      top: 10px;
+      left: 10px;
+      border-right: 0;
+      border-bottom: 0
+    }
+
+    .frame::after {
+      bottom: 10px;
+      right: 10px;
+      border-left: 0;
+      border-top: 0
+    }
+
+    .pad {
+      padding: 34px 30px 30px
+    }
+
+    @media(max-width:480px) {
+      .pad {
+        padding: 28px 20px 24px
+      }
+    }
+
+    .eyebrow {
+      font-family: "EB Garamond", serif;
+      font-style: italic;
+      letter-spacing: .12em;
+      color: var(--gold-lit);
+      font-size: .84rem;
+      text-align: center;
+      margin-bottom: 6px
+    }
+
+    h1 {
+      font-family: "Ramaraja", serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 8.5vw, 3.2rem);
+      line-height: 1.05;
+      text-align: center;
+      color: var(--ivory)
+    }
+
+    .rule {
+      width: 74px;
+      height: 1px;
+      margin: 15px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent)
+    }
+
+    .lede {
+      text-align: center;
+      color: var(--ivory-dim);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 18px auto 4px;
+      max-width: 46ch
+    }
+
+    .meta {
+      font-family: "EB Garamond", serif;
+      color: var(--gold-lit);
+      text-align: center;
+      font-size: .95rem;
+      margin-top: 12px;
+      opacity: .85
+    }
+
+    .btn {
+      font-family: "Noto Serif Telugu", serif;
+      font-weight: 600;
+      font-size: 1.03rem;
+      cursor: pointer;
+      border: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--gold-lit), var(--gold));
+      padding: 13px 26px;
+      border-radius: 3px;
+      box-shadow: 0 6px 18px rgba(201, 162, 39, .28);
+      transition: transform .16s ease, box-shadow .16s ease, filter .16s ease, opacity .16s ease
+    }
+
+    .btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      filter: brightness(1.05)
+    }
+
+    .btn:active:not(:disabled) {
+      transform: translateY(0)
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--gold-lit);
+      outline-offset: 3px
+    }
+
+    .btn:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+      box-shadow: none
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--gold-lit);
+      box-shadow: none;
+      border: 1px solid var(--hair);
+      font-weight: 500;
+      font-size: .95rem;
+      padding: 11px 16px
+    }
+
+    .btn.ghost:hover:not(:disabled) {
+      background: rgba(201, 162, 39, .08);
+      filter: none
+    }
+
+    .btn.ghost:disabled {
+      opacity: .3
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px
+    }
+
+    .counter {
+      font-family: "EB Garamond", serif;
+      color: var(--ivory-dim);
+      font-size: .9rem;
+      white-space: nowrap;
+      min-width: 52px
+    }
+
+    .track {
+      flex: 1;
+      height: 5px;
+      background: rgba(0, 0, 0, .35);
+      border-radius: 99px;
+      overflow: hidden
+    }
+
+    .fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--gold), var(--gold-lit));
+      border-radius: 99px;
+      transition: width .4s cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .scorepill {
+      font-family: "EB Garamond", serif;
+      color: var(--sage);
+      font-size: .9rem;
+      white-space: nowrap
+    }
+
+    .qtag {
+      font-family: "EB Garamond", serif;
+      font-style: italic;
+      color: var(--gold-lit);
+      font-size: .9rem;
+      letter-spacing: .05em;
+      margin: 22px 0 8px
+    }
+
+    .qtext {
+      font-size: 1.24rem;
+      line-height: 1.55;
+      font-weight: 600;
+      color: var(--ivory);
+      margin-bottom: 20px
+    }
+
+    @media(max-width:480px) {
+      .qtext {
+        font-size: 1.12rem
+      }
+    }
+
+    .answer {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    input[type=text] {
+      flex: 1;
+      min-width: 180px;
+      font-family: "Noto Serif Telugu", serif;
+      font-size: 1.08rem;
+      color: var(--ivory);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(201, 162, 39, .3);
+      border-radius: 4px;
+      padding: 13px 15px;
+      outline: none;
+      transition: border-color .15s ease, background .15s ease
+    }
+
+    input[type=text]:focus {
+      border-color: var(--gold);
+      background: rgba(201, 162, 39, .06)
+    }
+
+    input[type=text]::placeholder {
+      color: rgba(199, 187, 169, .5)
+    }
+
+    input[type=text]:disabled {
+      opacity: .7
+    }
+
+    .actions {
+      margin-top: 10px
+    }
+
+    .verdict {
+      margin-top: 16px;
+      min-height: 1.4em;
+      font-size: 1.02rem;
+      line-height: 1.6
+    }
+
+    .verdict.ok {
+      color: var(--sage);
+      font-weight: 600
+    }
+
+    .verdict.no {
+      color: var(--rust);
+      font-weight: 600
+    }
+
+    .verdict.neutral {
+      color: var(--gold-lit);
+      font-weight: 600
+    }
+
+    .model {
+      margin-top: 10px;
+      color: var(--ivory);
+      font-size: 1.02rem;
+      line-height: 1.6
+    }
+
+    .model .lab {
+      font-family: "EB Garamond", serif;
+      font-style: italic;
+      color: var(--ivory-dim);
+      margin-right: 6px
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      min-height: 52px;
+      flex-wrap: wrap
+    }
+
+    .foot .right {
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    .score-num {
+      font-family: "Ramaraja", serif;
+      font-size: clamp(3.2rem, 15vw, 5rem);
+      line-height: 1;
+      text-align: center;
+      color: var(--gold-lit)
+    }
+
+    .score-of {
+      font-family: "EB Garamond", serif;
+      color: var(--ivory-dim);
+      font-size: 1.1rem;
+      text-align: center
+    }
+
+    .verse {
+      text-align: center;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ivory);
+      margin: 20px auto 4px;
+      max-width: 42ch
+    }
+
+    .verse .cite {
+      display: block;
+      margin-top: 10px;
+      font-family: "EB Garamond", serif;
+      font-style: italic;
+      color: var(--gold-lit);
+      font-size: .95rem
+    }
+
+    .fade {
+      animation: fade .35s ease both
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .hidden {
+      display: none
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation: none !important;
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="pad">
+
+      <section id="start" class="fade">
+        <p class="eyebrow">సువార్త · యోహాను రచించినది</p>
+        <h1>యోహాను<br>17 – 21</h1>
+        <div class="rule"></div>
+        <p class="lede">యేసు ప్రార్థన, ఆయన బంధింపబడుట, సిలువ, పునరుత్థానము, పేతురు పునఃస్థాపన — ఐదు అధ్యాయములపై 100
+          ప్రశ్నలు. జవాబును మీరే టైప్ చేయండి; ఒక పదము చాలు.</p>
+        <p class="meta">100 ప్రశ్నలు · మునుపటి/తరువాత నావిగేషన్ · జవాబు చూపు సౌకర్యము</p>
+        <div class="center"><button class="btn" id="startBtn">మొదలుపెట్టు</button></div>
+      </section>
+
+      <section id="quiz" class="hidden">
+        <div class="top">
+          <span class="counter" id="counter">1 / 100</span>
+          <div class="track">
+            <div class="fill" id="fill"></div>
+          </div>
+          <span class="scorepill" id="scorepill">✦ 0</span>
+        </div>
+        <p class="qtag" id="qtag"></p>
+        <h2 class="qtext" id="qtext"></h2>
+        <div class="answer">
+          <input type="text" id="input" placeholder="ఇక్కడ జవాబు రాయండి…" autocomplete="off" autocapitalize="off"
+            spellcheck="false">
+          <button class="btn" id="submitBtn" disabled>సమర్పించు</button>
+        </div>
+        <div class="actions" id="actions">
+          <button class="btn ghost" id="showBtn">జవాబు చూపించు</button>
+        </div>
+        <div class="verdict" id="verdict"></div>
+        <div class="model hidden" id="model"></div>
+        <div class="foot">
+          <button class="btn ghost" id="prevBtn">← మునుపటి</button>
+          <div class="right">
+            <button class="btn ghost hidden" id="markBtn">నా జవాబు సరైనది ✓</button>
+            <button class="btn" id="nextBtn">తరువాత →</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="result" class="hidden">
+        <p class="eyebrow">ఫలితము</p>
+        <div class="score-num" id="scoreNum">0</div>
+        <p class="score-of">100 లో <span id="scoreDen">0</span></p>
+        <div class="rule"></div>
+        <p class="verse" id="verse"></p>
+        <div class="center"><button class="btn" id="againBtn">మళ్లీ ఆడు</button></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    const Q = [
+      // ---- అధ్యాయము 17 : యేసు మహా యాజక ప్రార్థన ----
+      { r: "17:1", q: "యేసు ఆకాశమువైపు కన్నులెత్తి ఎవరిని పిలిచెను?", a: "తండ్రీ", k: ["తండ్రి"] },
+      { r: "17:1", q: "యేసు \"నా ___ వచ్చియున్నది\" అనెను?", a: "ఘడియ", k: ["ఘడియ"] },
+      { r: "17:2", q: "కుమారునికి దేని మీద అధికారమిచ్చెను?", a: "సర్వశరీరుల మీద", k: ["సర్వశరీర", "శరీరుల"] },
+      { r: "17:2", q: "కుమారుడు తనవారికి దేనిని అనుగ్రహించును?", a: "నిత్య జీవము", k: ["నిత్యజీవ", "నిత్య"] },
+      { r: "17:3", q: "నిత్యజీవము అనగా ఏమి?", a: "సత్యదేవుని, యేసుక్రీస్తును ఎరుగుట", k: ["ఎరుగుట", "సత్యదేవు", "క్రీస్తు"] },
+      { r: "17:4", q: "యేసు భూమిమీద తండ్రిని ఎట్లు మహిమపరచెను?", a: "నీవిచ్చిన పని నెరవేర్చి", k: ["పని", "నెరవేర్చి"] },
+      { r: "17:5", q: "యేసు ఏ మహిమతో మహిమపరచుమని కోరెను?", a: "లోకము పుట్టకమునుపు ఉన్న మహిమతో", k: ["లోకము పుట్ట", "మహిమ"] },
+      { r: "17:6", q: "యేసు మనుష్యులకు దేనిని ప్రత్యక్షపరచెను?", a: "నీ నామమును", k: ["నామము"] },
+      { r: "17:8", q: "వారు దేనిని అంగీకరించిరి?", a: "నీవిచ్చిన మాటలు", k: ["మాటలు"] },
+      { r: "17:9", q: "యేసు ఎవరి కొరకు ప్రార్థన చేయుటలేదు?", a: "లోకము కొరకు", k: ["లోకము"] },
+      { r: "17:11", q: "\"మనము ఏకమైయున్నట్లు వారును ___ ఉండునట్లు\"?", a: "ఏకమై", k: ["ఏకమై"] },
+      { r: "17:12", q: "వారిలో ఎవడు తప్ప మరి ఎవడును నశింపలేదు?", a: "నాశనపుత్రుడు", k: ["నాశనపుత్ర"] },
+      { r: "17:14", q: "లోకము వారిని ఏమి చేయును?", a: "ద్వేషించును", k: ["ద్వేష"] },
+      { r: "17:15", q: "యేసు వారిని దేనినుండి కాపాడుమని ప్రార్థించెను?", a: "దుష్టునినుండి", k: ["దుష్టు"] },
+      { r: "17:17", q: "\"నీ ___ సత్యము\" — యేసు దేనిని సత్యమనెను?", a: "వాక్యమే", k: ["వాక్యము"] },
+      { r: "17:17", q: "దేనియందు వారిని ప్రతిష్ఠ చేయుమనెను?", a: "సత్యమందు", k: ["సత్యము"] },
+      { r: "17:18", q: "తండ్రి యేసును పంపిన ప్రకారము యేసు ఎవరిని లోకమునకు పంపెను?", a: "వారిని (శిష్యులను)", k: ["వారిని", "శిష్యు"] },
+      { r: "17:21", q: "యేసు అందరు ఎట్లు ఉండవలెనని ప్రార్థించెను?", a: "ఏకమై", k: ["ఏకమై"] },
+      { r: "17:24", q: "జగత్తు పునాది వేయబడకమునుపే తండ్రి యేసును ఏమి చేసెను?", a: "ప్రేమించెను", k: ["ప్రేమించ"] },
+      { r: "17:26", q: "యేసు వారికి దేనిని తెలియజేసెను?", a: "నీ నామమును", k: ["నామము"] },
+      // ---- అధ్యాయము 18 : బంధింపబడుట, పేతురు బొంకుట ----
+      { r: "18:1", q: "యేసు శిష్యులతో ఏ వాగు దాటిపోయెను?", a: "కెద్రోను వాగు", k: ["కెద్రోను"] },
+      { r: "18:1", q: "వాగు దాటిన తరువాత అక్కడ ఏమి ఉండెను?", a: "ఒక తోట", k: ["తోట"] },
+      { r: "18:2", q: "ఆ స్థలము ఎవరికి తెలిసియుండెను?", a: "యూదాకు", k: ["యూదా"] },
+      { r: "18:3", q: "యూదా ఎవరిని వెంటబెట్టుకొని వచ్చెను?", a: "సైనికులను, బంట్రౌతులను", k: ["సైనికు", "బంట్రౌతు"] },
+      { r: "18:3", q: "వారు దేనితో అక్కడికి వచ్చిరి?", a: "దివిటీలు, దీపములు, ఆయుధములు", k: ["దివిటీ", "ఆయుధ", "దీపము"] },
+      { r: "18:5", q: "వారు ఎవరిని వెదకుచుండిరి?", a: "నజరేయుడైన యేసును", k: ["నజరేయు", "యేసు"] },
+      { r: "18:6", q: "\"నేనే ఆయనను\" అనగా వారు ఏమైరి?", a: "వెనుకకు తగ్గి నేలమీద పడిరి", k: ["నేలమీద", "పడిరి", "పడ"] },
+      { r: "18:10", q: "కత్తి దూసి దాసుని చెవి నరికినవాడు ఎవరు?", a: "సీమోను పేతురు", k: ["పేతురు"] },
+      { r: "18:10", q: "పేతురు దాసుని ఏ చెవి నరికెను?", a: "కుడిచెవి", k: ["కుడిచెవి", "కుడి"] },
+      { r: "18:11", q: "ఆ దాసుని పేరు ఏమి?", a: "మల్కు", k: ["మల్కు"] },
+      { r: "18:11", q: "యేసు పేతురుతో ఏమి అనెను?", a: "కత్తి ఒరలో ఉంచుము", k: ["ఒరలో", "కత్తి"] },
+      { r: "18:13", q: "యేసును మొదట ఎవరి యొద్దకు తీసికొనిపోయిరి?", a: "అన్న యొద్దకు", k: ["అన్న"] },
+      { r: "18:13", q: "అన్న ఎవరికి మామ?", a: "కయపకు", k: ["కయప"] },
+      { r: "18:14", q: "కయప ఏమని ఆలోచన చెప్పినవాడు?", a: "ఒక మనుష్యుడు ప్రజల కొరకు చనిపోవుట ప్రయోజనకరమని", k: ["ప్రజల కొరకు", "చనిపోవుట", "చనిపో"] },
+      { r: "18:17", q: "ద్వారపాలకురాలి ప్రశ్నకు పేతురు ఏమనెను?", a: "కాననెను (కాదు)", k: ["కాన", "కాదు"] },
+      { r: "18:27", q: "పేతురు మూడవసారి కాదన్న వెంటనే ఏమి జరిగెను?", a: "కోడి కూసెను", k: ["కోడి"] },
+      { r: "18:28", q: "యూదులు మైలపడకుండ దేనిని భుజింపవలెనని లోపలికి వెళ్లలేదు?", a: "పస్కాను", k: ["పస్కా"] },
+      { r: "18:33", q: "పిలాతు యేసును ఏమని అడిగెను?", a: "యూదుల రాజవు నీవేనా", k: ["యూదుల రాజ", "రాజ"] },
+      { r: "18:36", q: "యేసు \"నా రాజ్యము ___ కాదు\" అనెను?", a: "ఇహసంబంధమైనది", k: ["ఇహసంబంధ", "ఇహ"] },
+      { r: "18:40", q: "వారు ఎవరిని విడుదల చేయుమని కేకలువేసిరి?", a: "బరబ్బను", k: ["బరబ్బ"] },
+      // ---- అధ్యాయము 19 : సిలువ, మరణము, సమాధి ----
+      { r: "19:1", q: "పిలాతు యేసును దేనితో కొట్టించెను?", a: "కొరడాలతో", k: ["కొరడా"] },
+      { r: "19:2", q: "సైనికులు దేనితో కిరీటము అల్లిరి?", a: "ముండ్లతో", k: ["ముండ్ల"] },
+      { r: "19:2-3", q: "యేసుకు ఏ రంగు వస్త్రము తొడిగిరి?", a: "ఊదారంగు", k: ["ఊదారంగు", "ఊదా"] },
+      { r: "19:3", q: "సైనికులు యేసును ఏమని ఎగతాళి చేసిరి?", a: "యూదుల రాజా, శుభమని", k: ["యూదుల రాజా", "రాజా"] },
+      { r: "19:6", q: "ప్రధానయాజకులు బంట్రౌతులు ఏమని కేకలు వేసిరి?", a: "సిలువవేయుము", k: ["సిలువ"] },
+      { r: "19:7", q: "యూదులు యేసు తనను ఏమని చెప్పుకొనెననిరి?", a: "దేవుని కుమారుడని", k: ["దేవుని కుమారు", "కుమారు"] },
+      { r: "19:13", q: "న్యాయపీఠ స్థలమునకు హెబ్రీ భాషలో పేరు ఏమి?", a: "గబ్బతా", k: ["గబ్బతా"] },
+      { r: "19:14", q: "ఆ దినము ఏ దినము?", a: "పస్కాను సిద్ధపరచు దినము", k: ["పస్కా", "సిద్ధపరచు"] },
+      { r: "19:15", q: "ప్రధానయాజకులు \"___ తప్ప మాకు వేరొక రాజు లేడు\" అనిరి?", a: "కైసరు", k: ["కైసరు"] },
+      { r: "19:17", q: "కపాలస్థలమునకు హెబ్రీ భాషలో పేరు ఏమి?", a: "గొల్గొతా", k: ["గొల్గొతా"] },
+      { r: "19:19", q: "పిలాతు సిలువ మీద వ్రాయించిన పైవిలాసము ఏమి?", a: "యూదులరాజైన నజరేయుడగు యేసు", k: ["యూదులరాజ", "నజరేయు"] },
+      { r: "19:20", q: "ఆ పైవిలాసము ఏ మూడు భాషలలో వ్రాయబడెను?", a: "హెబ్రీ, గ్రీకు, రోమా", k: ["హెబ్రీ", "గ్రీకు", "రోమా"] },
+      { r: "19:23", q: "సైనికులు యేసు వస్త్రములను ఎన్ని భాగములు చేసిరి?", a: "నాలుగు భాగములు", k: ["నాలుగు"] },
+      { r: "19:24", q: "కుట్టులేని అంగీ కొరకు సైనికులు ఏమి చేసిరి?", a: "చీట్లు వేసిరి", k: ["చీట్లు"] },
+      { r: "19:26-27", q: "యేసు తన తల్లిని ఎవరికి అప్పగించెను?", a: "తాను ప్రేమించిన శిష్యునికి", k: ["ప్రేమించిన", "శిష్యు"] },
+      { r: "19:28", q: "లేఖనము నెరవేరునట్లు యేసు \"నేను ___\" అనెను?", a: "దప్పిగొనుచున్నాను", k: ["దప్పి"] },
+      { r: "19:30", q: "యేసు చివరిగా ఏమని చెప్పి తల వంచి ఆత్మను అప్పగించెను?", a: "సమాప్తమైనది", k: ["సమాప్త"] },
+      { r: "19:34", q: "సైనికుడు ఈటెతో ప్రక్క పొడువగా ఏమి కారెను?", a: "రక్తమును నీళ్లును", k: ["రక్తము", "నీళ్లు"] },
+      { r: "19:38", q: "యేసు దేహమును పిలాతు యొద్ద సెలవడిగి ఎవరు తీసికొనిపోయెను?", a: "అరిమతయియ యోసేపు", k: ["యోసేపు", "అరిమతయ"] },
+      { r: "19:41", q: "యేసును ఎట్టి సమాధిలో పెట్టిరి?", a: "క్రొత్త సమాధిలో (తోటలో)", k: ["క్రొత్త", "సమాధి", "తోట"] },
+      // ---- అధ్యాయము 20 : పునరుత్థానము, తోమా ----
+      { r: "20:1", q: "ఆదివారమున పెందలకడ సమాధియొద్దకు ఎవరు వచ్చెను?", a: "మగ్దలేనే మరియ", k: ["మగ్దలేనే", "మరియ"] },
+      { r: "20:1", q: "ఆమె సమాధిమీద ఏమి చూచెను?", a: "రాయి తీయబడియుండుట", k: ["రాయి"] },
+      { r: "20:2", q: "ఆమె ఎవరియొద్దకు పరుగెత్తెను?", a: "సీమోను పేతురు, ప్రేమించిన శిష్యుడు", k: ["పేతురు", "శిష్యు"] },
+      { r: "20:4", q: "సమాధియొద్దకు ముందుగా ఎవరు వచ్చెను?", a: "ఆ మరియొక శిష్యుడు", k: ["శిష్యు"] },
+      { r: "20:5", q: "అతడు వంగి సమాధిలో ఏమి చూచెను?", a: "నారబట్టలు", k: ["నారబట్ట"] },
+      { r: "20:7", q: "యేసు తలరుమాలు ఎట్లు ఉండెను?", a: "వేరుగా ఒకచోట చుట్టిపెట్టబడి", k: ["వేరుగా", "రుమాలు", "చుట్టి"] },
+      { r: "20:8", q: "మొదట వచ్చిన శిష్యుడు లోపలికి పోయి ఏమి చేసెను?", a: "చూచి నమ్మెను", k: ["నమ్మెను", "నమ్మ"] },
+      { r: "20:12", q: "మరియ సమాధిలో ఎవరిని చూచెను?", a: "ఇద్దరు దేవదూతలు", k: ["దేవదూత", "ఇద్దరు"] },
+      { r: "20:12", q: "ఆ దేవదూతలు ఎట్టి వస్త్రములు ధరించిరి?", a: "తెల్లని వస్త్రములు", k: ["తెల్లని", "తెల్ల"] },
+      { r: "20:15", q: "మరియ యేసును మొదట ఎవరనుకొనెను?", a: "తోటమాలి", k: ["తోటమాలి"] },
+      { r: "20:16", q: "యేసు మరియను ఏమని పిలిచెను?", a: "మరియా", k: ["మరియా"] },
+      { r: "20:16", q: "మరియ యేసును హెబ్రీ భాషలో ఏమని పిలిచెను?", a: "రబ్బూనీ", k: ["రబ్బూనీ"] },
+      { r: "20:16", q: "\"రబ్బూనీ\" అనగా ఏమి?", a: "బోధకుడు", k: ["బోధకు"] },
+      { r: "20:17", q: "యేసు మరియతో \"నన్ను ___ వద్దు\" అనెను?", a: "ముట్టుకొనవద్దు", k: ["ముట్ట"] },
+      { r: "20:19", q: "శిష్యులు ఎందుకు తలుపులు మూసియుండిరి?", a: "యూదులకు భయపడి", k: ["భయ", "యూదుల"] },
+      { r: "20:19", q: "యేసు మధ్యను నిలిచి ఏమని చెప్పెను?", a: "మీకు సమాధానము కలుగునుగాక", k: ["సమాధాన"] },
+      { r: "20:22", q: "యేసు వారి మీద ఊది ఏమనెను?", a: "పరిశుద్ధాత్మను పొందుడి", k: ["పరిశుద్ధాత్మ", "ఆత్మ"] },
+      { r: "20:24", q: "యేసు వచ్చినప్పుడు పన్నెండుమందిలో ఎవడు లేకపోయెను?", a: "తోమా", k: ["తోమా"] },
+      { r: "20:25", q: "తోమా దేనిని చూచి తప్ప నమ్మననెను?", a: "మేకుల గురుతును", k: ["మేకుల", "గురుతు"] },
+      { r: "20:28", q: "తోమా యేసును చూచి ఏమనెను?", a: "నా ప్రభువా, నా దేవా", k: ["ప్రభువా", "దేవా"] },
+      // ---- అధ్యాయము 21 : తిబెరియ తీరమున, పేతురు పునఃస్థాపన ----
+      { r: "21:1", q: "యేసు ఏ సముద్ర తీరమున శిష్యులకు ప్రత్యక్షమాయెను?", a: "తిబెరియ సముద్రము", k: ["తిబెరియ"] },
+      { r: "21:2", q: "నతనయేలు ఏ ఊరివాడు?", a: "గలిలయలోని కానా", k: ["కానా", "గలిలయ"] },
+      { r: "21:3", q: "\"నేను ___ పట్టబోదును\" అని పేతురు అనెను?", a: "చేపలు", k: ["చేపలు"] },
+      { r: "21:3", q: "ఆ రాత్రి వారు ఎంత పట్టిరి?", a: "ఏమియు పట్టలేదు", k: ["ఏమియు", "పట్టలేదు"] },
+      { r: "21:6", q: "యేసు వలను దోనె ఏ ప్రక్క వేయుమనెను?", a: "కుడి ప్రక్క", k: ["కుడి"] },
+      { r: "21:7", q: "\"ఆయన ప్రభువు సుమీ\" అని ఎవరు చెప్పెను?", a: "యేసు ప్రేమించిన శిష్యుడు", k: ["ప్రేమించిన", "శిష్యు"] },
+      { r: "21:7", q: "ప్రభువని విని పేతురు ఏమి చేసెను?", a: "సముద్రములో దుమికెను", k: ["దుమిక", "సముద్రము"] },
+      { r: "21:11", q: "వల ఎన్ని గొప్ప చేపలతో నిండియుండెను?", a: "నూటఏబదిమూడు", k: ["నూటఏబదిమూడు", "153", "నూటయేబది"] },
+      { r: "21:11", q: "అంత విస్తారమైనను వల ఏమైంది?", a: "పిగలలేదు", k: ["పిగల"] },
+      { r: "21:12", q: "యేసు వారిని ఏమని పిలిచెను?", a: "రండి, భోజనము చేయుడి", k: ["భోజనము", "రండి"] },
+      { r: "21:13", q: "యేసు వారికి ఏమి పంచిపెట్టెను?", a: "రొట్టెను, చేపలను", k: ["రొట్టె", "చేపలు"] },
+      { r: "21:14", q: "ఇది యేసు శిష్యులకు ప్రత్యక్షమైనది ఎన్నవసారి?", a: "మూడవసారి", k: ["మూడవ"] },
+      { r: "21:15", q: "యేసు పేతురును ఎవరి కుమారుడని పిలిచెను?", a: "యోహాను కుమారుడు", k: ["యోహాను"] },
+      { r: "21:15", q: "మొదటిసారి యేసు పేతురును ఏమి మేపుమనెను?", a: "నా గొఱ్ఱెపిల్లలను", k: ["గొఱ్ఱెపిల్ల", "గొఱ్ఱె"] },
+      { r: "21:16", q: "రెండవసారి యేసు ఏమి కాయుమనెను?", a: "నా గొఱ్ఱెలను", k: ["గొఱ్ఱె"] },
+      { r: "21:17", q: "యేసు ఎన్నిసార్లు \"నన్ను ప్రేమించుచున్నావా\" అని అడిగెను?", a: "మూడుసార్లు", k: ["మూడు"] },
+      { r: "21:17", q: "మూడవసారి అడిగినందుకు పేతురు ఏమాయెను?", a: "వ్యసనపడెను", k: ["వ్యసన"] },
+      { r: "21:18", q: "పేతురు ముసలివాడైనప్పుడు ఎవరు అతని నడుము కట్టి మోసికొనిపోవును?", a: "వేరొకడు", k: ["వేరొక"] },
+      { r: "21:22", q: "యేసు పేతురుతో \"నీవు నన్ను ___\" అనెను?", a: "వెంబడించుము", k: ["వెంబడించు"] },
+      { r: "21:25", q: "యేసు కార్యములన్నిటిని వ్రాసినయెడల దేనికి చాలదని తోచును?", a: "భూలోకమునకు", k: ["భూలోక"] },
+    ];
+
+    const $ = id => document.getElementById(id);
+    let idx = 0, A = [];
+
+    function norm(s) {
+      return (s || "")
+        .replace(/[\s\u200b\u200c\u200d]/g, "")
+        .replace(/[.,!?;:'"“”‘’()\-–—।]/g, "")
+        .trim();
+    }
+    function check(input, keys) {
+      const n = norm(input);
+      if (n.length < 2) return false;
+      return keys.some(k => { const nk = norm(k); return nk && (n.includes(nk) || nk.includes(n)); });
+    }
+    function scoreCount() { return A.filter(a => a && (a.correct || a.selfMarked)).length; }
+    function doneCount() { return A.filter(a => a && a.done).length; }
+
+    function start() {
+      idx = 0;
+      A = Q.map(() => ({ typed: "", done: false, correct: false, selfMarked: false, shown: false }));
+      $('start').classList.add('hidden');
+      $('result').classList.add('hidden');
+      $('quiz').classList.remove('hidden');
+      render();
+    }
+
+    function render() {
+      const item = Q[idx], cur = A[idx];
+      $('counter').textContent = `${idx + 1} / ${Q.length}`;
+      $('fill').style.width = `${doneCount() / Q.length * 100}%`;
+      $('scorepill').textContent = `✦ ${scoreCount()}`;
+      $('qtag').textContent = `యోహాను ${item.r}`;
+      $('qtext').textContent = item.q;
+
+      const inp = $('input');
+      inp.value = cur.typed || "";
+
+      $('prevBtn').disabled = (idx === 0);
+      $('nextBtn').textContent = (idx === Q.length - 1) ? 'ఫలితము చూడు' : 'తరువాత →';
+
+      if (cur.done) {
+        inp.disabled = true;
+        $('submitBtn').classList.add('hidden');
+        $('showBtn').classList.add('hidden');
+        $('model').classList.remove('hidden');
+        $('model').innerHTML = `<span class="lab">సరైన జవాబు:</span>${item.a}`;
+        if (cur.correct || cur.selfMarked) {
+          $('verdict').className = "verdict ok";
+          $('verdict').textContent = (cur.selfMarked && !cur.correct) ? "✦ సరైనదిగా లెక్కించబడింది" : "✦ సరైనది";
+          $('markBtn').classList.add('hidden');
+        } else if (cur.shown) {
+          $('verdict').className = "verdict neutral";
+          $('verdict').textContent = "👁 జవాబు చూపబడింది";
+          $('markBtn').classList.add('hidden');
+        } else {
+          $('verdict').className = "verdict no";
+          $('verdict').textContent = "✕ తప్పు";
+          $('markBtn').classList.remove('hidden');
+        }
+      } else {
+        inp.disabled = false;
+        $('submitBtn').classList.remove('hidden');
+        $('submitBtn').disabled = (inp.value.trim() === "");
+        $('showBtn').classList.remove('hidden');
+        $('verdict').textContent = ""; $('verdict').className = "verdict";
+        $('model').classList.add('hidden'); $('model').textContent = "";
+        $('markBtn').classList.add('hidden');
+      }
+      const qt = $('qtext'); qt.classList.remove('fade'); void qt.offsetWidth; qt.classList.add('fade');
+      if (!cur.done) inp.focus(); else $('nextBtn').focus();
+    }
+
+    function submit() {
+      const cur = A[idx];
+      if (cur.done) return;
+      if ($('input').value.trim() === "") return;   // never act on an empty field
+      cur.typed = $('input').value;
+      cur.correct = check(cur.typed, Q[idx].k);
+      cur.done = true; cur.shown = false;
+      render();
+    }
+    function showAnswer() {
+      const cur = A[idx];
+      if (cur.done) return;
+      cur.typed = $('input').value;   // keep whatever was typed
+      cur.done = true; cur.shown = true; cur.correct = false;
+      render();
+    }
+    function selfMark() {
+      const cur = A[idx];
+      if (cur.correct || cur.selfMarked) return;
+      cur.selfMarked = true;
+      render();
+    }
+    function prev() { if (idx > 0) { idx--; render(); } }
+    function next() {
+      if (idx < Q.length - 1) { idx++; render(); }
+      else finish();
+    }
+
+    function finish() {
+      const score = scoreCount();
+      $('quiz').classList.add('hidden');
+      $('result').classList.remove('hidden');
+      $('result').classList.add('fade');
+      $('scoreNum').textContent = score;
+      $('scoreDen').textContent = score;
+      const pct = score / Q.length;
+      let v;
+      if (pct === 1) v = `"చూడక నమ్మినవారు ధన్యులు."<span class="cite">సంపూర్ణము! — యోహాను 20:29</span>`;
+      else if (pct >= .75) v = `"యేసు దేవుని కుమారుడైన క్రీస్తు అని నమ్మి, ఆయన నామమందు జీవము పొందుడి."<span class="cite">బహు చక్కగా — యోహాను 20:31</span>`;
+      else if (pct >= .5) v = `"నా గొఱ్ఱెపిల్లలను మేపుము."<span class="cite">మంచి ప్రయత్నము — యోహాను 21:15</span>`;
+      else v = `"నీ వాక్యమే సత్యము."<span class="cite">మరల చదివి ప్రయత్నించండి — యోహాను 17:17</span>`;
+      $('verse').innerHTML = v;
+    }
+
+    $('startBtn').onclick = start;
+    $('againBtn').onclick = start;
+    $('submitBtn').onclick = submit;
+    $('showBtn').onclick = showAnswer;
+    $('markBtn').onclick = selfMark;
+    $('prevBtn').onclick = prev;
+    $('nextBtn').onclick = next;
+
+    // keep typed text live + CTA disabled while empty
+    $('input').addEventListener('input', () => {
+      A[idx].typed = $('input').value;
+      if (!A[idx].done) $('submitBtn').disabled = ($('input').value.trim() === "");
+    });
+    // Enter submits a typed answer only — it never skips/navigates
+    $('input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); submit(); }
+    });
+  </script>
+</body>
+
+</html>
